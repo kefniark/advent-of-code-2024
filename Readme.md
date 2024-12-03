@@ -18,6 +18,11 @@ deno task d2-p1 # Day 2 - Part 1
 
 Each day is a self contain folder with vanilla TS, no extra tooling, scripts or dependencies
 
+## Previous Years
+
+* [Advent of Code 2023 (Golang)](https://github.com/kefniark/advent-of-code-2023)
+* [Advent of Code 2022 (Golang)](https://github.com/kefniark/advent-of-code-2022)
+
 ## Caution
 
 Please don't use these answers as a way to cheat, those are puzzle made for entertainment.
