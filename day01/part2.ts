@@ -1,3 +1,5 @@
+// https://adventofcode.com/2024/day/1
+
 const content = await Deno.readTextFile("./day01/input.txt")
 
 const getIds = (colNum: number): number[] =>

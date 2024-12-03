@@ -1,3 +1,5 @@
+// https://adventofcode.com/2024/day/2
+
 const content = await Deno.readTextFile("./day02/input.txt")
 
 function isSafe(num: number[]): boolean {
@@ -13,8 +15,6 @@ function isSafe(num: number[]): boolean {
 
 const count = content.split("\n")
     .map((x) => x.split(" ").map((y) => parseInt(y)))
-    .reduce((count, rep) => {
-        return count + (isSafe(rep) ? 1 : 0)
-    }, 0)
+    .reduce((count, rep) => count + (isSafe(rep) ? 1 : 0), 0)
 
 console.log(count)

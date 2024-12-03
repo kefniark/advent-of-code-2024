@@ -1,3 +1,5 @@
+// https://adventofcode.com/2024/day/2
+
 const content = await Deno.readTextFile("./day02/input.txt")
 
 function isSafe(num: number[]): boolean {
@@ -11,13 +13,12 @@ function isSafe(num: number[]): boolean {
     return true
 }
 
+// dumb bruteforce, check every sub array to see if at least one is safe
 const isAlmostSafe = (num: number[]): boolean =>
     isSafe(num) || num.some((_, i) => isSafe(num.filter((_, index) => index != i)))
 
 const count = content.split("\n")
     .map((x) => x.split(" ").map((y) => parseInt(y)))
-    .reduce((count, rep) => {
-        return count + (isAlmostSafe(rep) ? 1 : 0)
-    }, 0)
+    .reduce((count, rep) => count + (isAlmostSafe(rep) ? 1 : 0), 0)
 
 console.log(count)
