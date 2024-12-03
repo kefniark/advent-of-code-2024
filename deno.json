@@ -8,6 +8,8 @@
         "d1-p1": "deno run -A day01/part1.ts ",
         "d1-p2": "deno run -A day01/part2.ts ",
         "d2-p1": "deno run -A day02/part1.ts ",
-        "d2-p2": "deno run -A day02/part2.ts "
+        "d2-p2": "deno run -A day02/part2.ts ",
+        "d3-p1": "deno run -A day03/part1.ts ",
+        "d3-p2": "deno run -A day03/part2.ts "
     }
 }
