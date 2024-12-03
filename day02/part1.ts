@@ -9,9 +9,8 @@ const isSafe = (num: number[]) => {
     const sign = Math.sign(num[1] - num[0])
     for (let i = 0; i < num.length - 1; i++) {
         const diff = num[i + 1] - num[i]
-        const isCorrectSign = sign == Math.sign(diff)
-        const isInRange = Math.abs(diff) > 0 && Math.abs(diff) <= 3
-        if (!isCorrectSign || !isInRange) return false
+        if (sign != Math.sign(diff)) return false
+        if (Math.abs(diff) <= 0 || Math.abs(diff) > 3) return false
     }
 
     return true
