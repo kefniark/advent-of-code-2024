@@ -1,23 +1,18 @@
-const data = await Deno.readTextFile("./day01/input.txt")
+const content = await Deno.readTextFile("./day01/input.txt")
 
-const getCol = (id: number): number[] => {
-    return data.split("\n").map((x) => {
+const getIds = (colNum: number): number[] =>
+    content.split("\n").map((x) => {
         const entries = x.split("   ")
-        return parseInt(entries[id])
+        return parseInt(entries[colNum])
     }).sort((a, b) => a - b)
-}
 
-const countOccurences = (num: number[]): Map<number, number> => {
+const countFreq = (num: number[]): Map<number, number> => {
     const map = new Map<number, number>()
     num.forEach((x) => map.set(x, (map.get(x) ?? 0) + 1))
     return map
 }
 
-const ids = getCol(0)
-const freqMap = countOccurences(getCol(1))
-const count = ids.reduce((count, id) => {
-    const freq = freqMap.get(id) ?? 0
-    return count + id * freq
-}, 0)
-
+const ids = getIds(0)
+const freqMap = countFreq(getIds(1))
+const count = ids.reduce((count, id) => count + id * (freqMap.get(id) ?? 0), 0)
 console.log(count)
