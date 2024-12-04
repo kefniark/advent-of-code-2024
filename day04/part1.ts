@@ -10,7 +10,7 @@ const isValidWord = (x: number, y: number, dx: number, dy: number): number => {
     return data[y][x] == "X" && data[y + dy][x + dx] == "M" && data[y + dy * 2][x + dx * 2] == "A" && data[y + dy * 3][x + dx * 3] == "S" ? 1 : 0
 }
 
-// check 8 possible directions
+// evaluate 8 possible directions from a starting point (x,y)
 const directions = [[0, 1], [1, 1], [1, 0], [1, -1], [0, -1], [-1, -1], [-1, 0], [-1, 1]]
 const evalPosition = (x: number, y: number): number => directions.reduce((acc, dir) => acc + isValidWord(x, y, dir[1], dir[0]), 0)
 
