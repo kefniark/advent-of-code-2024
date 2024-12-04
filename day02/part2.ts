@@ -14,8 +14,7 @@ function isSafe(num: number[]): boolean {
 }
 
 // dumb bruteforce, check every sub array to see if at least one is safe
-const isAlmostSafe = (num: number[]): boolean =>
-    isSafe(num) || num.some((_, i) => isSafe(num.filter((_, index) => index != i)))
+const isAlmostSafe = (num: number[]): boolean => isSafe(num) || num.some((_, i) => isSafe(num.filter((_, index) => index != i)))
 
 const count = content.split("\n")
     .map((x) => x.split(" ").map((y) => parseInt(y)))
