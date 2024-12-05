@@ -12,7 +12,8 @@ const isValidWord = (x: number, y: number, dx: number, dy: number): number => {
 
 // evaluate only 4 possible diagonals from a starting point (x,y)
 const directions = [[1, 1], [1, -1], [-1, -1], [-1, 1]]
-const evalPosition = (x: number, y: number): number => (directions.reduce((acc, dir) => acc + isValidWord(x, y, dir[1], dir[0]), 0) == 2) ? 1 : 0
+const evalPosition = (x: number, y: number): number =>
+    (directions.reduce((acc, dir) => acc + isValidWord(x, y, dir[1], dir[0]), 0) == 2) ? 1 : 0
 
 let count = 0
 for (let y = 0; y < data.length; y++) {

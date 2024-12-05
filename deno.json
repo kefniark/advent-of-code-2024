@@ -2,7 +2,7 @@
     "fmt": {
         "semiColons": false,
         "indentWidth": 4,
-        "lineWidth": 160
+        "lineWidth": 140
     },
     "tasks": {
         "d1-p1": "deno run -A day01/part1.ts ",
@@ -12,6 +12,8 @@
         "d3-p1": "deno run -A day03/part1.ts ",
         "d3-p2": "deno run -A day03/part2.ts ",
         "d4-p1": "deno run -A day04/part1.ts ",
-        "d4-p2": "deno run -A day04/part2.ts "
+        "d4-p2": "deno run -A day04/part2.ts ",
+        "d5-p1": "deno run -A day05/part1.ts ",
+        "d5-p2": "deno run -A day05/part2.ts "
     }
 }

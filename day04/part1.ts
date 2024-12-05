@@ -7,7 +7,9 @@ const maxX = data[0].length
 const isValidWord = (x: number, y: number, dx: number, dy: number): number => {
     if ((y + dy * 3) >= maxY || (y + dy * 3) < 0) return 0 // check vertical boundary
     if ((x + dx * 3) >= maxX || (x + dx * 3) < 0) return 0 // check horizontal boundary
-    return data[y][x] == "X" && data[y + dy][x + dx] == "M" && data[y + dy * 2][x + dx * 2] == "A" && data[y + dy * 3][x + dx * 3] == "S" ? 1 : 0
+    return data[y][x] == "X" && data[y + dy][x + dx] == "M" && data[y + dy * 2][x + dx * 2] == "A" && data[y + dy * 3][x + dx * 3] == "S"
+        ? 1
+        : 0
 }
 
 // evaluate 8 possible directions from a starting point (x,y)
