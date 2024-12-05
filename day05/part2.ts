@@ -25,7 +25,7 @@ const possibleOrders = (buffer: number[], cur: number) =>
         .reverse()
         .map((i) => [...buffer.slice(0, i), cur, ...buffer.slice(i, buffer.length)])
 
-// try every possible combination and pick the first valid one
+// for each page, try every possible combination and take the first valid one and continue to the next page
 const fixUpdateOrder = (update: number[]) =>
     update.reduce((buffer: number[], cur) => possibleOrders(buffer, cur).find((x) => isUpdateValid(x))!, [])
 
