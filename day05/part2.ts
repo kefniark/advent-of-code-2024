@@ -19,7 +19,7 @@ const isUpdateValid = (update: number[]) =>
         return update.slice(0, pageIdx).every((x) => ruleAfter.indexOf(x) == -1)
     })
 
-// generate every permutation possible [[0,1,X],[0,X,1],[X,0,1]]
+// when adding a new page X, generate every permutation possible : [[0,1,X],[0,X,1],[X,0,1]]
 const possibleOrders = (buffer: number[], cur: number) =>
     [...Array(buffer.length + 1).keys()]
         .reverse()
