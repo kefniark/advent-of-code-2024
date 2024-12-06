@@ -7,7 +7,7 @@ const maxX = data[0].length
 const isValidWord = (x: number, y: number, dx: number, dy: number): number => {
     if ((y + dy) >= maxY || (y + dy) < 0 || (y - dy) >= maxY || (y - dy) < 0) return 0 // check vertical boundary
     if ((x + dx) >= maxX || (x + dx) < 0 || (x - dx) >= maxX || (x - dx) < 0) return 0 // check horizontal boundary
-    return data[y - dy][x - dx] == "M" && data[y][x] == "A" && data[y + dy][x + dx] == "S" ? 1 : 0
+    return "MAS".split("").every((letter, idx) => data[y + dy * (idx - 1)][x + dx * (idx - 1)] === letter) ? 1 : 0
 }
 
 // evaluate only 4 possible diagonals from a starting point (x,y)
