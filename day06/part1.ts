@@ -33,6 +33,7 @@ class Guard {
             const nextPos: vec = [this.pos[0] + directions[this.dir][0], this.pos[1] + directions[this.dir][1]]
             if (nextPos[0] < 0 || nextPos[0] >= mapData.length) break
             if (nextPos[1] < 0 || nextPos[1] >= mapData[0].length) break
+
             if (grid[nextPos[0]][nextPos[1]] == "#") this.rotate()
             else this.move(nextPos)
         }
