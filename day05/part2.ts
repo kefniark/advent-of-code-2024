@@ -19,13 +19,13 @@ const isUpdateValid = (update: number[]) =>
         return update.slice(0, pageIdx).every((x) => ruleAfter.indexOf(x) == -1)
     })
 
-// generate every permutation possible [[0,1,X],[0,X,1],[X,0,1]]
+// when adding a new page X, generate every permutation possible : [[0,1,X],[0,X,1],[X,0,1]]
 const possibleOrders = (buffer: number[], cur: number) =>
     [...Array(buffer.length + 1).keys()]
         .reverse()
         .map((i) => [...buffer.slice(0, i), cur, ...buffer.slice(i, buffer.length)])
 
-// try every possible combination and pick the first valid one
+// for each page, try every possible combination and take the first valid one and continue to the next page
 const fixUpdateOrder = (update: number[]) =>
     update.reduce((buffer: number[], cur) => possibleOrders(buffer, cur).find((x) => isUpdateValid(x))!, [])
 
