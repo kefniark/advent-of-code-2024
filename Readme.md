@@ -25,13 +25,13 @@ Each day is a self contain folder with vanilla TS, no extra tooling, scripts or 
 
 ## Developers
 
-For the environment, even if it's really simple to provision (with just deno), this project provides alternatives:
+For the environment, even if it's really simple to provision (with just `deno@2.x`), this project provides alternatives:
 
 - [Devbox](https://www.jetify.com/devbox) (nix):
   - [Install devbox](https://www.jetify.com/docs/devbox/installing_devbox/)
   - Run `devbox shell` (or use direnv for auto IDE setup)
 - [Devcontainer](https://code.visualstudio.com/docs/devcontainers/containers)
-  - Install devcontainer to your IDE (by default in VSCode)
+  - Install devcontainer to your IDE (provided by default in VSCode)
   - Click on Open a Remote Window (bottom left icon) > Reopen in container
 
 ## Caution
