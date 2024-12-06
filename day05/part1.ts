@@ -1,4 +1,4 @@
-const content = await Deno.readTextFile("./day05/test.txt")
+const content = await Deno.readTextFile("./day05/input.txt")
 
 const regexOrderRule = /(?<first>\d*)\|(?<second>\d*)/g
 const orderRules = content.split("\n")
