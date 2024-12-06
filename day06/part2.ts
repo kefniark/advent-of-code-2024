@@ -41,13 +41,19 @@ class Guard {
     }
 }
 
+// To get the list of usually visited tiles (we can discard others)
+const baseGuard = new Guard(originalPos)
+baseGuard.walk(mapData)
+
 let loop = 0
 mapData.forEach((row, j) =>
     row.forEach((_, i) => {
         if (mapData[j][i] != ".") return
-        const possibleMap = mapData.map((row, y) => row.map((cell, x) => y == j && x == i ? "#" : cell))
+        if (!directions.some((_, x) => baseGuard.visited.has(tileId([j, i], x)))) return
+
         const guard = new Guard(originalPos)
-        if (guard.walk(possibleMap)) loop += 1
+        const newMap = mapData.map((row, y) => row.map((cell, x) => y == j && x == i ? "#" : cell))
+        if (guard.walk(newMap)) loop += 1
     })
 )
 console.log(loop)
