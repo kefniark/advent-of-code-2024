@@ -23,9 +23,10 @@ Each day is a self contain folder with vanilla TS, no extra tooling, scripts or 
 - [Advent of Code 2023 (Golang)](https://github.com/kefniark/advent-of-code-2023)
 - [Advent of Code 2022 (Golang)](https://github.com/kefniark/advent-of-code-2022)
 
-## Developers
+## Developer environment
 
-For the environment, even if it's really simple to provision (with just `deno@2.x`), this project provides alternatives:
+The project is really simple to provision (with just `deno@2.x`), but I also provides alternative way to get setup, to get a reproducible
+environment between machines and CI:
 
 - [Devbox](https://www.jetify.com/devbox) (nix):
   - [Install devbox](https://www.jetify.com/docs/devbox/installing_devbox/)
