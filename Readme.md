@@ -25,13 +25,13 @@ Each day is a self contain folder with vanilla TS, no extra tooling, scripts or 
 
 ## Developer environment
 
-The project is really simple to provision (with just `deno@2.x`), but I also provides alternative way to get setup, to get a reproducible
-environment between machines and CI:
+The project is really simple to provision (with just `deno@2.x`), but I also provides alternative way to get started. To ensure a
+reproducible environment between machines and CI, use one of the following:
 
 - [Devbox](https://www.jetify.com/devbox) (nix):
   - [Install devbox](https://www.jetify.com/docs/devbox/installing_devbox/)
   - Run `devbox shell` (or use direnv for auto IDE setup)
-- [Devcontainer](https://code.visualstudio.com/docs/devcontainers/containers)
+- [Devcontainer](https://code.visualstudio.com/docs/devcontainers/containers) (docker):
   - Install devcontainer to your IDE (provided by default in VSCode)
   - Click on Open a Remote Window (bottom left icon) > Reopen in container
 
