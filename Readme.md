@@ -23,6 +23,10 @@ Each day is a self contain folder with vanilla TS, no extra tooling, scripts or 
 - [Advent of Code 2023 (Golang)](https://github.com/kefniark/advent-of-code-2023)
 - [Advent of Code 2022 (Golang)](https://github.com/kefniark/advent-of-code-2022)
 
+## Developers
+
+For the environment, even if it's really simple to provision (with just deno), this project provides both [Devbox](https://www.jetify.com/devbox) (nix) and [Devcontainer](https://code.visualstudio.com/docs/devcontainers/containers) (docker).
+
 ## Caution
 
 Please don't use these answers as a way to cheat, those are puzzle made for entertainment.
