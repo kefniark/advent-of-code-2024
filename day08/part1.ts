@@ -21,16 +21,13 @@ const findAntinode = (input: vec[]) => {
 const grid = content.split("\n").map((row) => row.split(""))
 const width = grid[0].length
 
+// create a map of antenna location per freq {a: [pos1, pos2, pos3], 0: [pos1, pos2]], ...]
 const antennas = grid.flat().reduce((set, val, i) => {
-    set.set(val, [...(set.get(val) ?? []), [Math.floor(i / width), i % width]])
+    if (val !== ".") set.set(val, [...(set.get(val) ?? []), [Math.floor(i / width), i % width]])
     return set
 }, new Map<string, vec[]>())
 
-const antinodes = new Set(
-    [...antennas.keys()]
-        .filter((x) => x != ".")
-        .map((freq) => findAntinode(antennas.get(freq)!).map((x) => getId(x))).flat(),
-)
+const antinodes = new Set([...antennas.keys()].map((freq) => findAntinode(antennas.get(freq)!).map((x) => getId(x))).flat())
 
 const res = grid.flat().reduce((acc, _, i) => acc + (antinodes.has(getId([Math.floor(i / width), i % width])) ? 1 : 0), 0)
 console.log(res)
