@@ -4,7 +4,26 @@ type factor = [number, number, number]
 const regexp = /Button A: X\+(\d*), Y\+(\d*)\nButton B: X\+(\d*), Y\+(\d*)\nPrize: X=(\d*), Y=(\d*)/g
 const data = content.matchAll(regexp).map((x) => x.slice(1).map((y) => parseInt(y)))
 
-// hum ... math magic ^^
+// hum ... math magic ^^ using substition
+//
+// with 2 equations: `U = Ax + By` and `V = Cx + Dy`
+// For Y (we cancel X):
+//    `CU = CAx + CBy` and `AV = ACx + ADy`
+//    1st eq - 2nd equation (CAx cancel)
+//    CU - AV = CBy - ADy => y (CB - AD) = CU - AV
+// -> y = (CU - AV) / (CB - AD)
+//
+// Do the same for X (cancel Y):
+//    `DU = DAx + DBy` and `BV = BCx + BDy`
+//    1st eq - 2nd equation (BDy cancel)
+//    DU - BV = DAx - BCx => x (DA - BC) = DU - BV
+// -> x = (DU - BV) / (DA - BC)
+//
+// Example for 94x + 22y = 8400 and 34x + 67y = 5400 (first example):
+// A = 94, B = 22, C = 34, D = 67, U = 8400, V = 5400
+//    x = (67*8400 - 22*5400) / (67*94 - 22*34) = 80
+//    y = (34*8400 - 94*5400) / (34*22 - 94*67) = 40
+
 const findCoef = (x: factor, y: factor) => {
     const i = (x[2] * y[1] - y[2] * x[1]) / (x[0] * y[1] - x[1] * y[0])
     const j = (y[2] * x[0] - x[2] * y[0]) / (x[0] * y[1] - x[1] * y[0])
