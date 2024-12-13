@@ -21,8 +21,8 @@ const data = content.matchAll(regexp).map((x) => x.slice(1).map((y) => parseInt(
 //
 // Example for 94x + 22y = 8400 and 34x + 67y = 5400 (first example):
 // with coef A = 94, B = 22, C = 34, D = 67, U = 8400, V = 5400
-//    x = (67*8400 - 22*5400) / (67*94 - 22*34) = 80
-//    y = (34*8400 - 94*5400) / (34*22 - 94*67) = 40
+//    x = (DU - BV) / (DA - BC) = (67*8400 - 22*5400) / (67*94 - 22*34) = 80
+//    y = (CU - AV) / (CB - AD) = (34*8400 - 94*5400) / (34*22 - 94*67) = 40
 //
 const findCoef = (x: factor, y: factor) => {
     const i = (y[1] * x[2] - x[1] * y[2]) / (y[1] * x[0] - x[1] * y[0])
