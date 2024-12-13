@@ -7,15 +7,15 @@ const data = content.matchAll(regexp).map((x) => x.slice(1).map((y) => parseInt(
 // hum ... math magic ^^ using substition
 //
 // with 2 equations: `U = Ax + By` and `V = Cx + Dy`
-// For Y (we cancel X):
-//    `CU = CAx + CBy` and `AV = ACx + ADy`
-//    1st eq - 2nd equation (CAx cancel)
+// For Y (we try to cancel X):
+//    `CU = CAx + CBy` (equation multiplied by C) and `AV = ACx + ADy` (equation multiplied by A)
+//    then substract 1st equation - 2nd equation (CAx cancel)
 //    CU - AV = CBy - ADy => y (CB - AD) = CU - AV
 // -> y = (CU - AV) / (CB - AD)
 //
-// Do the same for X (cancel Y):
-//    `DU = DAx + DBy` and `BV = BCx + BDy`
-//    1st eq - 2nd equation (BDy cancel)
+// Do the same for X (we try to cancel Y):
+//    `DU = DAx + DBy` (equation multiplied by D) and `BV = BCx + BDy` (equation multiplied by B)
+//    then 1st eq - 2nd equation (BDy cancel)
 //    DU - BV = DAx - BCx => x (DA - BC) = DU - BV
 // -> x = (DU - BV) / (DA - BC)
 //
