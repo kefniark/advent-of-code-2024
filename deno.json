@@ -26,6 +26,8 @@
         "d10-p1": "deno run -A day10/part1.ts",
         "d10-p2": "deno run -A day10/part2.ts",
         "d11-p1": "deno run -A day11/part1.ts",
-        "d11-p2": "deno run -A day11/part2.ts"
+        "d11-p2": "deno run -A day11/part2.ts",
+        "d12-p1": "deno run -A day12/part1.ts",
+        "d12-p2": "deno run -A day12/part2.ts"
     }
 }
