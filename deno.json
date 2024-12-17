@@ -34,6 +34,6 @@
         "d14-p1": "deno run -A day14/part1.ts",
         "d14-p2": "deno run -A day14/part2.ts",
         "d15-p1": "deno run -A day15/part1.ts",
-        "d15-p2": "deno run -A day15/part2.ts"
+        "d16-p1": "deno run -A day16/part1.ts"
     }
 }
